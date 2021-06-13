@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical"
+    android:id="@+id/meny"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+
+        >
+
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:layout_margin="5dp"
+            android:background="#1E40E9"
+            app:srcCompat="@drawable/ic_helmet_game_icon_149645"
+            tools:ignore="ContentDescription,VectorDrawableCompat"
+            tools:srcCompat="@drawable/ic_helmet_game_icon_149645" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#1E32E9"
+            app:srcCompat="@drawable/ic_sword_game_icon_149634"
+            tools:ignore="VectorDrawableCompat" />
+    </LinearLayout>
+
+
+</LinearLayout>
