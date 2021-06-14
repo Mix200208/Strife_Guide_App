@@ -22,23 +22,26 @@
 
         <ImageButton
             android:id="@+id/imageButton4"
+            style="@style/Widget.AppCompat.ImageButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+
 
             android:layout_margin="5dp"
-            android:background="#1E40E9"
+            android:layout_weight="1"
+            android:background="@drawable/insert"
             app:srcCompat="@drawable/ic_helmet_game_icon_149645"
-            tools:ignore="ContentDescription,VectorDrawableCompat"
-            tools:srcCompat="@drawable/ic_helmet_game_icon_149645" />
+
+            tools:ignore="ContentDescription,VectorDrawableCompat" />
 
         <ImageButton
             android:id="@+id/imageButton5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:background="#1E32E9"
+            android:background="@drawable/insert"
             app:srcCompat="@drawable/ic_sword_game_icon_149634"
             tools:ignore="VectorDrawableCompat" />
     </LinearLayout>
