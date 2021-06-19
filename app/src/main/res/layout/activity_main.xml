@@ -9,25 +9,63 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     >
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id = "@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/meny_back_color"
+        app:layout_contraintBottom_toBottomOf = "parent"
+        app:layout_contraintEnd_toEndOf = "parent"
+        app:layout_contraintStart_toStartOf = "parent"
+        android:layout_alignParentBottom="true"
+        app:menu = "@menu/nav_menu"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/line_top"
+        >
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/bottom_line" />
+    </LinearLayout>
 
 
 
 
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_hero"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/meny"
+        android:layout_above="@id/navigation"
+        android:layout_below="@+id/line_top"
+        >
 
-        android:layout_marginBottom="9dp" />
 
-    <include
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
-        layout="@layout/meny"
-        android:layout_alignParentBottom="true"
-        tools:ignore="IncludeLayoutParam"></include>
+
+            android:layout_weight="1"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/my_nav" />
+
+
+    </LinearLayout>
 
 
 </RelativeLayout>
