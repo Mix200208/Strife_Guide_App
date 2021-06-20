@@ -10,7 +10,7 @@
         android:icon="@drawable/ic_sword_game_icon_149634"/>
     <item
         android:title="Инфо"
-        android:id="@+id/info2"
+        android:id="@+id/Info"
         android:icon="@drawable/ic_baseline_info_24"
         />
 </menu>

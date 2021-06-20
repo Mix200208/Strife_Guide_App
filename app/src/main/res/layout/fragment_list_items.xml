@@ -10,7 +10,7 @@
         android:id="@+id/items"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Герои"
+        android:text="Предметы"
         android:gravity="center"
         android:background="@drawable/meny_back_color"
         android:textStyle="bold"
