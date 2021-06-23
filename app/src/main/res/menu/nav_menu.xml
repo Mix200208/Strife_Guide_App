@@ -12,5 +12,6 @@
         android:title="Инфо"
         android:id="@+id/Info"
         android:icon="@drawable/ic_baseline_info_24"
+
         />
 </menu>

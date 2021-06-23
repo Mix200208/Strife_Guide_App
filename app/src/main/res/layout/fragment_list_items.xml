@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Предметы"
         android:gravity="center"
+        android:textColor="@color/black"
         android:background="@drawable/meny_back_color"
         android:textStyle="bold"
 
