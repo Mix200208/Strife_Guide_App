@@ -39,12 +39,13 @@
         android:id="@+id/logo"
         tools:ignore="NotSibling">
 
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ace" />
+            tools:srcCompat="@drawable/ace" />
     </LinearLayout>
 
     <Button
