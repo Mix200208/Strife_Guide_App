@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Герои"
+        android:id="@+id/list_heroes"
+        android:icon="@drawable/ic_helmet_game_icon_149645"/>
+    <item
+        android:title="Предметы"
+        android:id="@+id/list_items"
+        android:icon="@drawable/ic_sword_game_icon_149634"/>
+    <item
+        android:title="Инфо"
+        android:id="@+id/Info"
+        android:icon="@drawable/ic_baseline_info_24"
+
+        />
+</menu>

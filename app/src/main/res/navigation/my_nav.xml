@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/Info">
+    <fragment
+        android:id="@+id/Info"
+        android:name="com.example.strifeguideapp.fragments.Info"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/list_items"
+        android:name="com.example.strifeguideapp.fragments.list_items"
+        android:label="fragment_list_items"
+        tools:layout="@layout/fragment_list_items" />
+    <fragment
+        android:id="@+id/list_heroes"
+        android:name="com.example.strifeguideapp.fragments.list_heroes"
+        android:label="fragment_list_heroes"
+        tools:layout="@layout/fragment_list_heroes" />
+</navigation>
