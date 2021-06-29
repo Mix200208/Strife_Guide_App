@@ -28,7 +28,7 @@ class list_heroes : Fragment() {
     }
 
     fun initView(view: View){
-        recyclerView = view.findViewById(R.id.list_heroes)
+        recyclerView = view.findViewById(R.id.list_h)
         recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.setHasFixedSize(true)
     }
