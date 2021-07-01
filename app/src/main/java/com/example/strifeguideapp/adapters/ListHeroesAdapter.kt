@@ -10,9 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.strifeguideapp.R
 import com.example.strifeguideapp.models.data.Hero
 
-class ListHeroesAdapter:RecyclerView.Adapter<ListHeroesAdapter.HeroesViewHolder>() {
-
-    var heroes:List<Hero> = listOf()
+class ListHeroesAdapter(val listdata: List<Hero>) : RecyclerView.Adapter<ListHeroesAdapter.HeroesViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeroesViewHolder {
@@ -24,20 +22,23 @@ class ListHeroesAdapter:RecyclerView.Adapter<ListHeroesAdapter.HeroesViewHolder>
     }
 
     override fun onBindViewHolder(holder: HeroesViewHolder, position: Int) {
-        holder.bind(heroes[position])
+        holder.image_hero.setImageResource(listdata.get(position).image)
+        holder.name.text = listdata.get(position).name
 
     }
 
     override fun getItemCount(): Int {
-        return heroes.size
+        return listdata.size
     }
 
     class HeroesViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
-        var image_hero:ImageView = itemView.findViewById(R.id.logo_hero)
-        var name:TextView = itemView.findViewById(R.id.name_hero)
-        fun bind(item:Hero){
+        lateinit var image_hero:ImageView
+        lateinit var name:TextView
 
-        }
+       init{
+           image_hero = itemView.findViewById(R.id.logo_hero)
+           name = itemView.findViewById(R.id.name_hero)
+       }
 
 
     }

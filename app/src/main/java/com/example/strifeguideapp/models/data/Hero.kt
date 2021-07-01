@@ -3,7 +3,7 @@ package com.example.strifeguideapp.models.data
 import android.widget.ImageView
 
 data class Hero (
-    val id:String,
+
     val image:Int,
 
     val name:String,
