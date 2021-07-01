@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.strifeguideapp.R
 import com.example.strifeguideapp.models.data.Hero
 
-class ListHeroesAdapter(val listdata: List<Hero>) : RecyclerView.Adapter<ListHeroesAdapter.HeroesViewHolder>() {
+class ListHeroesAdapter(val listdata: List<Hero>,val listener:(Hero)->Unit) : RecyclerView.Adapter<ListHeroesAdapter.HeroesViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeroesViewHolder {
@@ -22,8 +22,11 @@ class ListHeroesAdapter(val listdata: List<Hero>) : RecyclerView.Adapter<ListHer
     }
 
     override fun onBindViewHolder(holder: HeroesViewHolder, position: Int) {
-        holder.image_hero.setImageResource(listdata.get(position).image)
-        holder.name.text = listdata.get(position).name
+        //holder.image_hero.setImageResource(listdata.get(position).image)
+        //holder.name.text = listdata.get(position).name
+        holder.bindView(listdata.get(position),listener)
+
+
 
     }
 
@@ -38,7 +41,16 @@ class ListHeroesAdapter(val listdata: List<Hero>) : RecyclerView.Adapter<ListHer
        init{
            image_hero = itemView.findViewById(R.id.logo_hero)
            name = itemView.findViewById(R.id.name_hero)
+
        }
+        fun bindView(hero:Hero,listener: (Hero) -> Unit){
+            image_hero.setImageResource(hero.image)
+            name.text = hero.name
+            itemView.setOnClickListener { listener(hero) }
+
+
+
+        }
 
 
     }
