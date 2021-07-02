@@ -12,6 +12,8 @@ import com.example.strifeguideapp.HeroDetailActivity
 import com.example.strifeguideapp.R
 import com.example.strifeguideapp.adapters.ListHeroesAdapter
 import com.example.strifeguideapp.models.data.Hero
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,8 +23,8 @@ lateinit var heroesAdapter: ListHeroesAdapter
 lateinit var recyclerView: RecyclerView
 
 
-
-
+var storage:FirebaseStorage = FirebaseStorage.getInstance()
+var rootRef:StorageReference = storage.reference;
 class list_heroes : Fragment() {
 
     companion object {
@@ -32,6 +34,7 @@ class list_heroes : Fragment() {
 
 
     private fun initdataheroes(){
+
         mdata = ArrayList<Hero>()
         mdata.add(Hero(R.drawable.ace,"Ace","-","-","-","-","-","-","-","-"))
         mdata.add(Hero(R.drawable.bastion,"Bastion","-","-","-","-","-","-","-","-",))

@@ -45,6 +45,7 @@ class ListHeroesAdapter(val listdata: List<Hero>,val listener:(Hero)->Unit) : Re
        }
         fun bindView(hero:Hero,listener: (Hero) -> Unit){
             image_hero.setImageResource(hero.image)
+
             name.text = hero.name
             itemView.setOnClickListener { listener(hero) }
 

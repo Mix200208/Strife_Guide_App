@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "643044405060",
+    "firebase_url": "https://strifeguideapp-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "strifeguideapp",
+    "storage_bucket": "strifeguideapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643044405060:android:af24084adcfd15aadbf111",
+        "android_client_info": {
+          "package_name": "com.example.strifeguideapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643044405060-gq8mrb9ttobk5gi2h47kc29iocjapon8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX-BD367ytxCoeszRWBC9zAWPutkYtEkY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643044405060-gq8mrb9ttobk5gi2h47kc29iocjapon8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
