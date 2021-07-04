@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.strifeguideapp.R
 import com.example.strifeguideapp.models.data.Hero
+import com.squareup.picasso.Picasso
 
 class ListHeroesAdapter(val listdata: List<Hero>,val listener:(Hero)->Unit) : RecyclerView.Adapter<ListHeroesAdapter.HeroesViewHolder>() {
 
@@ -35,8 +36,8 @@ class ListHeroesAdapter(val listdata: List<Hero>,val listener:(Hero)->Unit) : Re
     }
 
     class HeroesViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
-        lateinit var image_hero:ImageView
-        lateinit var name:TextView
+         var image_hero:ImageView
+         var name:TextView
 
        init{
            image_hero = itemView.findViewById(R.id.logo_hero)
@@ -44,8 +45,9 @@ class ListHeroesAdapter(val listdata: List<Hero>,val listener:(Hero)->Unit) : Re
 
        }
         fun bindView(hero:Hero,listener: (Hero) -> Unit){
-            image_hero.setImageResource(hero.image)
+//            image_hero.setImageResource(hero.image)
 
+            Picasso.get().load(hero.image).into(image_hero)
             name.text = hero.name
             itemView.setOnClickListener { listener(hero) }
 

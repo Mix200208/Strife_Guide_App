@@ -7,6 +7,7 @@ import android.widget.TextView
 import com.example.strifeguideapp.fragments.list_heroes
 import com.example.strifeguideapp.fragments.list_heroes.Companion.INTENT_PARCELABLE
 import com.example.strifeguideapp.models.data.Hero
+import com.squareup.picasso.Picasso
 
 class HeroDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +28,7 @@ class HeroDetailActivity : AppCompatActivity() {
 
 
         if (hero != null) {
-            icon.setImageResource(hero.image)
+            Picasso.get().load(hero.image).into(icon)
             name.text = hero.name
             first_skill.text = hero.first_skill
             first_skill_review.text = hero.first_skill_review
