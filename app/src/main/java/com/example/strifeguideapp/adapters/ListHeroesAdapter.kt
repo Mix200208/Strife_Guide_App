@@ -10,8 +10,16 @@ import com.example.strifeguideapp.R
 import com.example.strifeguideapp.models.data.Hero
 import com.squareup.picasso.Picasso
 
-class ListHeroesAdapter(val listdata: MutableSet<Hero>,val listener:(Hero)->Unit) : RecyclerView.Adapter<ListHeroesAdapter.HeroesViewHolder>() {
+class ListHeroesAdapter(val listener:(Hero)->Unit) : RecyclerView.Adapter<ListHeroesAdapter.HeroesViewHolder>() {
 
+    val listHero:MutableSet<Hero> = mutableSetOf()
+
+    fun setData(newHero:MutableSet<Hero>){
+        listHero.clear()
+        listHero.addAll(newHero)
+        notifyDataSetChanged()
+
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeroesViewHolder {
 
@@ -22,35 +30,27 @@ class ListHeroesAdapter(val listdata: MutableSet<Hero>,val listener:(Hero)->Unit
     }
 
     override fun onBindViewHolder(holder: HeroesViewHolder, position: Int) {
-        //holder.image_hero.setImageResource(listdata.get(position).image)
-        //holder.name.text = listdata.get(position).name
-        holder.bindView(listdata.elementAt(position),listener)
 
-
+        holder.bindView(listHero.elementAt(position),listener)
 
     }
 
     override fun getItemCount(): Int {
-        return listdata.size
+        return listHero.size
     }
 
     class HeroesViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
-         var image_hero:ImageView
-         var name:TextView
 
-       init{
-           image_hero = itemView.findViewById(R.id.logo_hero)
-           name = itemView.findViewById(R.id.name_hero)
+        val image_hero:ImageView = itemView.findViewById(R.id.logo_hero)
+        val name:TextView = itemView.findViewById(R.id.name_hero)
 
-       }
+
+
         fun bindView(hero:Hero,listener: (Hero) -> Unit){
-//            image_hero.setImageResource(hero.image)
 
             Picasso.get().load(hero.image).into(image_hero)
             name.text = hero.name
             itemView.setOnClickListener { listener(hero) }
-
-
 
         }
 

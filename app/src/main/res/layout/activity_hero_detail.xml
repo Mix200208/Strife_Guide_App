@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#07B3F6"
+    android:background="@drawable/gradient_back"
 
     tools:context=".HeroDetailActivity">
 
@@ -20,7 +20,8 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        app:srcCompat="@drawable/ace" />
+
+        app:srcCompat="@drawable/carter" />
 
     <TextView
         android:id="@+id/name_Hero"
@@ -40,6 +41,7 @@
         android:layout_margin="10dp"
         android:layout_marginLeft="10dp"
         android:text="Ледяной штопор"
+        android:textColor="@color/black"
         android:textSize="15dp"
         android:textStyle="bold" />
 
@@ -49,12 +51,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/name_first_skill"
         android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
         android:text="Наносит окружающим врагам 95/130/165/200 ед. магического урона"
 
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/name_second_skill"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/review_first_skill"
@@ -71,7 +75,7 @@
         android:layout_below="@id/name_second_skill"
         android:layout_marginLeft="10dp"
         android:text="Эйс прыгает в указанное место, наносит 75/100/125/150 ед. магического урона и накладывает постепенно ослабевающий эффект замедления на 50% на 3.5 секунды"
-
+        android:textColor="@color/black"
         android:textStyle="bold" />
 
     <TextView
@@ -82,6 +86,7 @@
         android:layout_margin="10dp"
         android:layout_marginLeft="10dp"
         android:text="Кусачий холод"
+        android:textColor="@color/black"
 
         android:textStyle="bold" />
 
@@ -93,7 +98,7 @@
         android:layout_marginLeft="10dp"
         android:text="Запускает вокруг себя 4 сосульки, которые снижают получаемый урон на 25/30/35/40%.
 Когда враг наносит удар, одна сосулька исчезает, нанося ему 30/42/53/65 ед. магического урона и накладывая суммирующийся эффект замедления на 20%"
-
+        android:textColor="@color/black"
         android:textStyle="bold" />
 
     <TextView
@@ -104,7 +109,7 @@
         android:layout_margin="10dp"
         android:layout_marginLeft="10dp"
         android:text="Удар навылет"
-
+        android:textColor="@color/black"
         android:textStyle="bold" />
 
     <TextView
@@ -115,6 +120,7 @@
         android:layout_marginLeft="10dp"
         android:text="Наносит выбранному врагу 255/340/425 ед. магического урона.
 Если противник погибает от удара, восстанавливает 25% здоровья и маны"
+        android:textColor="@color/black"
 
         android:textStyle="bold" />
 

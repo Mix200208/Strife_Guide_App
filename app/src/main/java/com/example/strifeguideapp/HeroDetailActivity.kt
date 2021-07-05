@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import com.example.strifeguideapp.fragments.list_heroes
-import com.example.strifeguideapp.fragments.list_heroes.Companion.INTENT_PARCELABLE
+import com.example.strifeguideapp.fragments.ListHeroesFragment
+import com.example.strifeguideapp.fragments.ListHeroesFragment.Companion.INTENT_PARCELABLE
 import com.example.strifeguideapp.models.data.Hero
 import com.squareup.picasso.Picasso
 
@@ -13,7 +13,7 @@ class HeroDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hero_detail)
-        val hero = intent.getParcelableExtra<Hero>(list_heroes.INTENT_PARCELABLE)
+        val hero = intent.getParcelableExtra<Hero>(ListHeroesFragment.INTENT_PARCELABLE)
 
         var icon= findViewById<ImageView>(R.id.icon_hero)
         var name = findViewById<TextView>(R.id.name_Hero)
