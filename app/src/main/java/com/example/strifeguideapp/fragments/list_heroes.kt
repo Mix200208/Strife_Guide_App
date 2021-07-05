@@ -13,23 +13,18 @@ import com.example.strifeguideapp.HeroDetailActivity
 import com.example.strifeguideapp.R
 import com.example.strifeguideapp.adapters.ListHeroesAdapter
 import com.example.strifeguideapp.models.data.Hero
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-
-
+import com.google.firebase.database.*
+import com.google.firebase.database.ktx.getValue
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
-lateinit var mdata: ArrayList<Hero>
+
 lateinit var heroesAdapter: ListHeroesAdapter
 lateinit var recyclerView: RecyclerView
-
+var mdata: MutableSet<Hero> = mutableSetOf()
 var database = FirebaseDatabase.getInstance().reference
-var myRef: DatabaseReference = database.child("Heroes/")
+var myRef: DatabaseReference = database.child("Heroes")
 
 
 
@@ -49,22 +44,35 @@ class list_heroes : Fragment() {
         myRef.addValueEventListener(object: ValueEventListener {
 
 
+
+
             override fun onDataChange(snapshot: DataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
+                Log.i("Message","Test")
 
-                mdata = ArrayList()
+
                for(ds:DataSnapshot in snapshot.children){
 
-                   val hero = ds.getValue(Hero::class.java)
 
-                   hero?.let { mdata.add(it) }
+
+                   val hero = ds.getValue<Hero>()
+
+                   mdata.add(hero!!)
+
 
 
                }
 
 
+
+
             }
+
+
+
+
+
 
 
             override fun onCancelled(error: DatabaseError) {
@@ -73,10 +81,15 @@ class list_heroes : Fragment() {
             )
 
 
-            mdata.add(Hero())
+
+
+
+
         // mdata.add(Hero(R.drawable.ace,"Ace","-","-","-","-","-","-","-","-"))
         // mdata.add(Hero(R.drawable.bastion, "Bastion", "-", "-", "-", "-", "-", "-", "-", "-"))
     }
+
+
 
     fun initView(view: View){
         recyclerView = view.findViewById(R.id.list_h)
@@ -111,13 +124,14 @@ class list_heroes : Fragment() {
 
 
     ): View? {
+        var mdata: ArrayList<Hero> = ArrayList()
         var view =  inflater.inflate(R.layout.fragment_list_heroes, container, false)
-        mdata = ArrayList()
         initView(view)
         initdataheroes()
         heroesAdapt()
         return view
     }
+
 
 
 

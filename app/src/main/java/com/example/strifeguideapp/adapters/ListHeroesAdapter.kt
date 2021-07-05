@@ -1,6 +1,5 @@
 package com.example.strifeguideapp.adapters
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,7 @@ import com.example.strifeguideapp.R
 import com.example.strifeguideapp.models.data.Hero
 import com.squareup.picasso.Picasso
 
-class ListHeroesAdapter(val listdata: List<Hero>,val listener:(Hero)->Unit) : RecyclerView.Adapter<ListHeroesAdapter.HeroesViewHolder>() {
+class ListHeroesAdapter(val listdata: MutableSet<Hero>,val listener:(Hero)->Unit) : RecyclerView.Adapter<ListHeroesAdapter.HeroesViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeroesViewHolder {
@@ -25,7 +24,7 @@ class ListHeroesAdapter(val listdata: List<Hero>,val listener:(Hero)->Unit) : Re
     override fun onBindViewHolder(holder: HeroesViewHolder, position: Int) {
         //holder.image_hero.setImageResource(listdata.get(position).image)
         //holder.name.text = listdata.get(position).name
-        holder.bindView(listdata.get(position),listener)
+        holder.bindView(listdata.elementAt(position),listener)
 
 
 
