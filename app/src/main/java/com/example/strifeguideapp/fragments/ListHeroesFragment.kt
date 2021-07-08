@@ -32,7 +32,6 @@ class ListHeroesFragment : Fragment() {
 
         myRef.addValueEventListener(object : ValueEventListener {
 
-
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 for (ds: DataSnapshot in snapshot.children) {
@@ -41,6 +40,7 @@ class ListHeroesFragment : Fragment() {
                     mdata.add(hero!!)
 
                 }
+                heroesAdapter.setData(mdata)
 
             }
 
@@ -67,7 +67,6 @@ class ListHeroesFragment : Fragment() {
             intent.putExtra(INTENT_PARCELABLE, it)
             startActivity(intent)
 
-
         }
 
         heroesAdapter.setData(mdata)
@@ -77,6 +76,7 @@ class ListHeroesFragment : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
 
         arguments?.let {
