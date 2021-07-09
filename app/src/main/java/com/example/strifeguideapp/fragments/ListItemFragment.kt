@@ -1,26 +1,29 @@
 package com.example.strifeguideapp.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.strifeguideapp.R
+import com.example.strifeguideapp.adapters.ListHeroesAdapter
+import com.example.strifeguideapp.adapters.ListItemsAdapter
+import com.example.strifeguideapp.models.data.Hero
+import com.example.strifeguideapp.models.data.Item
+import com.google.firebase.database.*
+import com.google.firebase.database.ktx.getValue
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+lateinit var itemsAdapter: ListItemsAdapter
+private lateinit var recyclerView: RecyclerView
+private val data: MutableSet<Item> = mutableSetOf()
+private val database = FirebaseDatabase.getInstance().reference
+private val myRef: DatabaseReference = database.child("Items")
 
-/**
- * A simple [Fragment] subclass.
- * Use the [list_items.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ListItemFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,30 +32,59 @@ class ListItemFragment : Fragment() {
         }
     }
 
+    fun initListItems() {
+
+        myRef.addValueEventListener(object : ValueEventListener {
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (dt in snapshot.children) {
+
+                    val item = dt.getValue<Item>()
+                    data.add(item!!)
+
+                }
+
+                itemsAdapter.setItemsData(data)
+
+            }
+
+            override fun onCancelled(error: DatabaseError){
+                Log.e("DatabaseError", error.message)
+            }
+
+        })
+
+    }
+
+    fun initView(view:View){
+
+        recyclerView = view.findViewById(R.id.list_item)
+        recyclerView.layoutManager = LinearLayoutManager(activity)
+        recyclerView.setHasFixedSize(true)
+
+    }
+
+    fun setRecyclerViewAdapter() {
+
+        itemsAdapter = ListItemsAdapter()
+        itemsAdapter.setItemsData(data)
+        recyclerView.adapter = itemsAdapter
+
+
+    }
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_items, container, false)
+        val view = inflater.inflate(R.layout.fragment_list_items, container, false)
+        initView(view)
+        initListItems()
+        setRecyclerViewAdapter()
+
+        return view
     }
 
-//    companion object {
-//        /**
-//         * Use this factory method to create a new instance of
-//         * this fragment using the provided parameters.
-//         *
-//         * @param param1 Parameter 1.
-//         * @param param2 Parameter 2.
-//         * @return A new instance of fragment list_items.
-//         */
-//        // TODO: Rename and change types and number of parameters
-//        @JvmStatic
-//        fun newInstance(param1: String, param2: String) =
-//            list_items().apply {
-//                arguments = Bundle().apply {
-//
-//                }
-//            }
-//    }
+
 }
