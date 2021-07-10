@@ -16,13 +16,14 @@ import com.example.strifeguideapp.models.data.Hero
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
 
-lateinit var heroesAdapter: ListHeroesAdapter
-private lateinit var recyclerView: RecyclerView
-private val mdata: MutableSet<Hero> = mutableSetOf()
-private val database = FirebaseDatabase.getInstance().reference
-private val myRef: DatabaseReference = database.child("Heroes")
 
 class ListHeroesFragment : Fragment() {
+
+    private lateinit var heroesAdapter: ListHeroesAdapter
+    private lateinit var recyclerView: RecyclerView
+    private val mdata: MutableSet<Hero> = mutableSetOf()
+    private val database = FirebaseDatabase.getInstance().reference
+    private val myRef: DatabaseReference = database.child("Heroes")
 
     companion object {
         val INTENT_PARCELABLE = "OBJECT_INTENT"

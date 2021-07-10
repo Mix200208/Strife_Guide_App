@@ -21,18 +21,22 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/WeaponButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/gradient_back"
             android:layout_weight="1"
-            android:src="@drawable/ic_weapon" />
+            android:src="@drawable/ic_weapon"
+
+
+            />
 
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+
             android:background="@drawable/gradient_back"
             android:src="@drawable/ic_magic" />
 

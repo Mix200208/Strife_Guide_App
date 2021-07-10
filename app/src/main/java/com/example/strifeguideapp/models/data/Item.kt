@@ -5,4 +5,5 @@ data class Item(
     val price_item:String? = null,
     val review_item:String? = null,
     val image:String? = null,
+    val specification:String? = null
 )
