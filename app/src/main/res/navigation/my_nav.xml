@@ -6,17 +6,17 @@
     app:startDestination="@id/Info">
     <fragment
         android:id="@+id/Info"
-        android:name="com.example.strifeguideapp.fragments.Info"
+        android:name="com.example.strifeguideapp.fragments.InfoFragment"
         android:label="fragment_info"
         tools:layout="@layout/fragment_info" />
     <fragment
         android:id="@+id/list_items"
-        android:name="com.example.strifeguideapp.fragments.list_items"
+        android:name="com.example.strifeguideapp.fragments.ListItemFragment"
         android:label="fragment_list_items"
         tools:layout="@layout/fragment_list_items" />
     <fragment
         android:id="@+id/list_heroes"
-        android:name="com.example.strifeguideapp.fragments.list_heroes"
+        android:name="com.example.strifeguideapp.fragments.ListHeroesFragment"
         android:label="fragment_list_heroes"
         tools:layout="@layout/fragment_list_heroes" />
 </navigation>

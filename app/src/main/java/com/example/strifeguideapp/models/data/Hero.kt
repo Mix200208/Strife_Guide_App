@@ -1,16 +1,23 @@
 package com.example.strifeguideapp.models.data
 
-import android.widget.ImageView
+import android.net.Uri
+import android.os.Parcelable
+import com.google.firebase.database.PropertyName
+import kotlinx.android.parcel.Parcelize
+import com.google.firebase.database.IgnoreExtraProperties
 
+@Parcelize
 data class Hero (
 
-    val image:Int,
+   val image:String? = null,
+   val name:String? = null,
+   val first_skill:String? = null,
+   val first_skill_review:String? = null,
+   val second_skill:String? = null,
+   val second_skill_review:String? = null,
+   val third_skill:String? = null,
+   val third_skill_review:String? = null,
+   val fourth_skill:String? = null ,
+   val fourth_skill_review:String? = null,
 
-    val name:String,
-    val first_skill:String?,
-    val second_skill:String?,
-    val third_skill:String?,
-    val fourth_skill:String?,
-
-
-        )
+   ):Parcelable
