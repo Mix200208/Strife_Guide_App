@@ -9,6 +9,8 @@ import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.strifeguideapp.R
@@ -46,8 +48,7 @@ class ListItemFragment : Fragment() {
 
                 }
 
-                itemsAdapter.setItemsData(data.filter { it.specification == "Weapon" }
-                    .toMutableSet())
+                itemsAdapter.setItemsData(data)
 
             }
 
@@ -62,30 +63,68 @@ class ListItemFragment : Fragment() {
     fun initView(view: View) {
 
         recyclerView = view.findViewById(R.id.list_item)
-        recyclerView.layoutManager = LinearLayoutManager(activity)
-        recyclerView.setHasFixedSize(true)
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager(activity)
+            setHasFixedSize(true)
+        }
+
 
     }
 
     fun setRecyclerViewAdapter() {
 
-        itemsAdapter = ListItemsAdapter()
-        itemsAdapter.setItemsData(data)
+        itemsAdapter = ListItemsAdapter().apply {
+            setItemsData(data)
+        }
         recyclerView.adapter = itemsAdapter
 
 
     }
 
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    fun clickOnAllItemsButton(view: View){
+        val but = view.findViewById<View>(R.id.AllItemsButton)
+        but.setOnClickListener {
+            itemsAdapter.setItemsData(data)
 
-        super.onViewCreated(view, savedInstanceState)
+        }
+    }
+
+    fun clickOnWeaponButton(view: View){
         val but = view.findViewById<View>(R.id.WeaponButton)
         but.setOnClickListener {
             itemsAdapter.setItemsData(data.filter { it.specification == "Weapon" }.toMutableSet())
-        }
 
+        }
     }
+
+    fun clickOnMagicButton(view: View){
+        val but = view.findViewById<View>(R.id.MagicButton)
+        but.setOnClickListener {
+            itemsAdapter.setItemsData(data.filter { it.specification == "Magic" }.toMutableSet())
+
+        }
+    }
+
+    fun clickOnDefButton(view: View){
+        val but = view.findViewById<View>(R.id.DefenseButton)
+        but.setOnClickListener {
+            itemsAdapter.setItemsData(data.filter { it.specification == "Defense" }.toMutableSet())
+
+        }
+    }
+
+    fun clickOnBootsButton(view: View){
+        val but = view.findViewById<View>(R.id.BootsButton)
+        but.setOnClickListener {
+            itemsAdapter.setItemsData(data.filter { it.specification == "Boots" }.toMutableSet())
+
+        }
+    }
+
+
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -93,6 +132,11 @@ class ListItemFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_list_items, container, false)
+        clickOnAllItemsButton(view)
+        clickOnWeaponButton(view)
+        clickOnMagicButton(view)
+        clickOnDefButton(view)
+        clickOnBootsButton(view)
         initView(view)
         initListItems()
         setRecyclerViewAdapter()

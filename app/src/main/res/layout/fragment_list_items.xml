@@ -21,6 +21,14 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/AllItemsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/gradient_back"
+            android:src="@drawable/ic_baseline_reorder_24" />
+
+        <ImageButton
             android:id="@+id/WeaponButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -32,16 +40,15 @@
             />
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/MagicButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-
             android:background="@drawable/gradient_back"
             android:src="@drawable/ic_magic" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/DefenseButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -49,7 +56,7 @@
             android:src="@drawable/ic_shield" />
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/BootsButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
