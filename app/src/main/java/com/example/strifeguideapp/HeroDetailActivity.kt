@@ -35,6 +35,8 @@ class HeroDetailActivity : AppCompatActivity() {
 
         }
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
     }
 }

@@ -3,25 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.Info">
-
-    <TextView
-        android:id="@+id/top_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Информация"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:background="@drawable/meny_back_color"
-        android:textStyle="bold"
+    tools:context=".fragments.InfoFragment">
 
 
-
-        />
 
 
     <TextView
-        android:layout_below="@id/top_text"
+
         android:id="@+id/text_info"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
