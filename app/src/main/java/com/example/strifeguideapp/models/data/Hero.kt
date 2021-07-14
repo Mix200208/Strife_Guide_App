@@ -12,12 +12,16 @@ data class Hero (
    val image:String? = null,
    val name:String? = null,
    val first_skill:String? = null,
+   val fiSkillIcon:String? = null,
    val first_skill_review:String? = null,
    val second_skill:String? = null,
+   val scSkillIcon:String? = null,
    val second_skill_review:String? = null,
    val third_skill:String? = null,
+   val thSkillIcon:String? = null,
    val third_skill_review:String? = null,
    val fourth_skill:String? = null ,
+   val frSkillIcon:String? = null,
    val fourth_skill_review:String? = null,
 
    ):Parcelable
