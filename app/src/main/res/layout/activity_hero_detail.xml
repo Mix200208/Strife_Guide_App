@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
-
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
         <import type = "android.view.View" />
@@ -38,17 +35,13 @@
             name="foSkillRev"
             type="String" />
 
-
     </data>
 
     <RelativeLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/gradient_back"
-
-        tools:context=".HeroDetailActivity">
-
+        >
         <ImageView
             android:id="@+id/icon_hero"
             android:layout_width="109dp"
@@ -61,7 +54,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
 
-             />
+            />
 
         <TextView
             android:id="@+id/name_Hero"
@@ -74,95 +67,236 @@
             android:textColor="@color/black"
             android:textSize="20dp" />
 
-
-        <TextView
-            android:id="@+id/name_first_skill"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_below="@id/name_Hero"
-            android:layout_margin="10dp"
-            android:layout_marginLeft="10dp"
-            android:text="@{frSkill}"
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            android:textStyle="bold" />
+            android:orientation="vertical"
 
-        <TextView
-            android:id="@+id/review_first_skill"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/name_first_skill"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/black"
-            android:text="@{frSkillRev}"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                >
 
-             />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/icon_frSkill_lay"
+                    >
+                    <ImageView
+                        android:id="@+id/icon_frSkill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
-        <TextView
-            android:id="@+id/name_second_skill"
-            android:textColor="@color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/review_first_skill"
-            android:layout_margin="10dp"
-            android:layout_marginLeft="10dp"
-            android:text="@{scSkill}"
 
-            android:textStyle="bold" />
+                        />
 
-        <TextView
-            android:id="@+id/review_second_skill"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/name_second_skill"
-            android:layout_marginLeft="10dp"
-            android:text="@{scSkillRev}"
-            android:textColor="@color/black"
-             />
+                </LinearLayout>
 
-        <TextView
-            android:id="@+id/name_third_skill"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/review_second_skill"
-            android:layout_margin="10dp"
-            android:layout_marginLeft="10dp"
-            android:text="@{thSkill}"
-            android:textColor="@color/black"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@id/icon_frSkill_lay"
+                    tools:ignore="NotSibling">
 
-            android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/name_first_skill"
+                        android:layout_toRightOf="@id/icon_frSkill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/name_Hero"
+                        android:layout_margin="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="@{frSkill}"
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/review_third_skill"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/name_third_skill"
-            android:layout_marginLeft="10dp"
-            android:text="@{thSkillRev}"
-            android:textColor="@color/black"
-             />
+                    <TextView
+                        android:id="@+id/review_first_skill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
-        <TextView
-            android:id="@+id/name_fourth_skill"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/review_third_skill"
-            android:layout_margin="10dp"
-            android:layout_marginLeft="10dp"
-            android:text="@{foSkill}"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/black"
+                        android:text="@{frSkillRev}"
 
-        <TextView
-            android:id="@+id/review_fourth_skill"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/name_fourth_skill"
-            android:layout_marginLeft="10dp"
-            android:text="@{foSkillRev}"
-            android:textColor="@color/black"
+                        />
+                </LinearLayout>
 
-             />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/icon_seSkill_lay"
+                    >
+                    <ImageView
+                        android:id="@+id/icon_seSkill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@id/icon_seSkill_lay"
+                    tools:ignore="NotSibling">
+
+                    <TextView
+                        android:id="@+id/name_second_skill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginLeft="10dp"
+                        android:text="@{scSkill}"
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/review_second_skill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/black"
+                        android:text="@{scSkillRev}"
+
+                        />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="10dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/icon_thSkill_lay"
+                    >
+                    <ImageView
+                        android:id="@+id/icon_thSkill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@id/icon_thSkill_lay"
+                    tools:ignore="NotSibling">
+
+                    <TextView
+                        android:id="@+id/name_third_skill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="@{thSkill}"
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/review_third_skill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/black"
+                        android:text="@{thSkillRev}"
+
+                        />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/icon_foSkill_lay"
+                    >
+                    <ImageView
+                        android:id="@+id/icon_fourthSkill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@id/icon_foSkill_lay"
+                    tools:ignore="NotSibling">
+
+                    <TextView
+                        android:id="@+id/name_fourth_skill"
+                        android:layout_toRightOf="@id/icon_frSkill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="@{foSkill}"
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/review_fourth_skill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/black"
+                        android:text="@{foSkillRev}"
+
+                        />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
 
 
     </RelativeLayout>

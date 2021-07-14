@@ -22,6 +22,10 @@ class HeroDetailActivity : AppCompatActivity() {
         if (hero != null) {
 
             Picasso.get().load(hero.image).into(binding.iconHero)
+            Picasso.get().load(hero.fiSkillIcon).into(binding.iconFrSkill)
+            Picasso.get().load(hero.scSkillIcon).into(binding.iconSeSkill)
+            Picasso.get().load(hero.thSkillIcon).into(binding.iconThSkill)
+            Picasso.get().load(hero.frSkillIcon).into(binding.iconFourthSkill)
             binding.nameH = hero.name
             binding.frSkill = hero.first_skill
             binding.frSkillRev = hero.first_skill_review
