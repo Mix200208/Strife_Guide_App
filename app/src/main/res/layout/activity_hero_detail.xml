@@ -85,6 +85,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:id="@+id/icon_frSkill_lay"
+                    android:layout_marginLeft="10dp"
                     >
                     <ImageView
                         android:id="@+id/icon_frSkill"
@@ -109,18 +110,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/name_Hero"
-                        android:layout_margin="10dp"
                         android:layout_marginLeft="10dp"
                         android:text="@{frSkill}"
                         android:textColor="@color/black"
-                        android:textSize="10dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/review_first_skill"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
+                        android:textSize="15dp"
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/black"
                         android:text="@{frSkillRev}"
@@ -143,6 +143,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:id="@+id/icon_seSkill_lay"
+                    android:layout_marginLeft="10dp"
                     >
                     <ImageView
                         android:id="@+id/icon_seSkill"
@@ -164,11 +165,10 @@
                         android:id="@+id/name_second_skill"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
                         android:layout_marginLeft="10dp"
                         android:text="@{scSkill}"
                         android:textColor="@color/black"
-                        android:textSize="10dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -178,6 +178,7 @@
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/black"
                         android:text="@{scSkillRev}"
+                        android:textSize="15dp"
 
                         />
                 </LinearLayout>
@@ -187,7 +188,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:layout_marginTop="10dp"
                 >
 
@@ -196,6 +196,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:id="@+id/icon_thSkill_lay"
+                    android:layout_marginLeft="10dp"
                     >
                     <ImageView
                         android:id="@+id/icon_thSkill"
@@ -217,20 +218,19 @@
                         android:id="@+id/name_third_skill"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
                         android:layout_marginLeft="10dp"
                         android:text="@{thSkill}"
                         android:textColor="@color/black"
-                        android:textSize="10dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/review_third_skill"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/black"
+                        android:textSize="15dp"
                         android:text="@{thSkillRev}"
 
                         />
@@ -250,6 +250,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:id="@+id/icon_foSkill_lay"
+                    android:layout_marginLeft="10dp"
                     >
                     <ImageView
                         android:id="@+id/icon_fourthSkill"
@@ -272,19 +273,18 @@
                         android:layout_toRightOf="@id/icon_frSkill"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
                         android:layout_marginLeft="10dp"
                         android:text="@{foSkill}"
                         android:textColor="@color/black"
-                        android:textSize="10dp"
+                        android:textSize="15dp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/review_fourth_skill"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
                         android:layout_marginLeft="10dp"
+                        android:textSize="15dp"
                         android:textColor="@color/black"
                         android:text="@{foSkillRev}"
 
