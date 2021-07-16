@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/Info">
+    app:startDestination="@id/list_heroes">
     <fragment
         android:id="@+id/Info"
         android:name="com.example.strifeguideapp.fragments.InfoFragment"

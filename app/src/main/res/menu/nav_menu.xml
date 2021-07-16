@@ -3,7 +3,8 @@
     <item
         android:title="Герои"
         android:id="@+id/list_heroes"
-        android:icon="@drawable/ic_helmet_game_icon_149645"/>
+        android:icon="@drawable/ic_helmet_game_icon_149645"
+        />
     <item
         android:title="Предметы"
         android:id="@+id/list_items"
