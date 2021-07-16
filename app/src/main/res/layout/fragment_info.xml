@@ -7,16 +7,18 @@
 
 
 
-
     <TextView
 
         android:id="@+id/text_info"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Информация"
+        android:text="Developer contacts \n\nGmail:yarmish826@gmail.com\n\nTelegram:@Ace1806"
+        android:textSize="20dp"
+        android:textColor="@color/black"
         android:gravity="center"
 
         />
+
 
 
 
